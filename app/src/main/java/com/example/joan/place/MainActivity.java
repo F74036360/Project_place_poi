@@ -58,13 +58,7 @@ public class MainActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //R-tree 2 poi
         ctx=getApplicationContext();
-        //R-tree 3 poi
-
-        //account
-        //account_frag=new Account_fragment();
-        //poi_schedule
         onePOI_schedule=new OnePOI_Schedule();
         //poi_save
         onePOI_saved=new OnePOI_saved();
@@ -123,37 +117,12 @@ public class MainActivity extends FragmentActivity {
             }
         });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         requestPermission();
-
-
-       /* String url = getUrl(23.0015995, 120.21770739999998, "park");
-        PlacesTask task = new PlacesTask();
-        task.execute(url);*/
-
 
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
-
-
-
 
     private void requestPermission() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -162,8 +131,6 @@ public class MainActivity extends FragmentActivity {
             }
         }
     }
-
-
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -192,8 +159,6 @@ public class MainActivity extends FragmentActivity {
                 }
                 if (place.getLatLng() != null)
                     Log.d("LagLng:", "" + place.getLatLng().toString());
-
-
             }
         }
     }
@@ -262,9 +227,5 @@ public class MainActivity extends FragmentActivity {
             bmImage.setImageBitmap(result);
         }
     }
-
-
-
-
 
 }
